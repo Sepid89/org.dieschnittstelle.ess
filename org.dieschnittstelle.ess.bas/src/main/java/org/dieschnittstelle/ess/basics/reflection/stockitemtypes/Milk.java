@@ -58,7 +58,4 @@ public class Milk implements IStockItem {
 
 		this.price = price;
 	}
-	
-	
-
 }
