@@ -1,7 +1,12 @@
 package org.dieschnittstelle.ess.jrs;
 
+import org.dieschnittstelle.ess.entities.GenericCRUDExecutor;
+import org.dieschnittstelle.ess.entities.erp.AbstractProduct;
 import org.dieschnittstelle.ess.entities.erp.IndividualisedProductItem;
 
+import javax.servlet.ServletContext;
+import javax.ws.rs.core.Context;
+import java.util.AbstractList;
 import java.util.List;
 
 /*
@@ -10,24 +15,31 @@ import java.util.List;
 
 public class ProductCRUDServiceImpl implements IProductCRUDService {
 
-	@Override
-	public IndividualisedProductItem createProduct(
-			IndividualisedProductItem prod) {
-		// TODO Auto-generated method stub
-		return null;
+	@Context()
+	private ServletContext servletContext;
+
+	private GenericCRUDExecutor<AbstractProduct> readExecFromServletContext() {
+		return (GenericCRUDExecutor<AbstractProduct>)servletContext.getAttribute("productCRUD");
 	}
 
 	@Override
-	public List<IndividualisedProductItem> readAllProducts() {
+	public AbstractProduct createProduct(
+			AbstractProduct prod) {
 		// TODO Auto-generated method stub
-		return null;
+		return (AbstractProduct) this.readExecFromServletContext().createObject(prod);
 	}
 
 	@Override
-	public IndividualisedProductItem updateProduct(long id,
-			IndividualisedProductItem update) {
+	public List<AbstractProduct> readAllProducts() {
 		// TODO Auto-generated method stub
-		return null;
+		return this.readExecFromServletContext().readAllObjects();
+	}
+
+	@Override
+	public AbstractProduct updateProduct(long id,
+			AbstractProduct update) {
+		// TODO Auto-generated method stub
+		return this.readExecFromServletContext().updateObject(update);
 	}
 
 	@Override
@@ -41,5 +53,4 @@ public class ProductCRUDServiceImpl implements IProductCRUDService {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	
 }

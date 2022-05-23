@@ -82,7 +82,7 @@ public class ShowTouchpointService {
 			if (stepwise)
 				step();
 
-			deleteTouchpoint(touchpoints.get(0));
+			//deleteTouchpoint(touchpoints.get(0));
 		}
 
 		// 3) wait for input and create a new touchpoint
@@ -128,8 +128,8 @@ public class ShowTouchpointService {
 			// create a GetMethod
 
 			// UE SER1: Aendern Sie die URL von api->gui
-			HttpGet get = new HttpGet(
-					"http://localhost:8080/gui/" + (async ? "async/touchpoints" : "touchpoints"));
+			HttpGet get = new HttpGet("http://localhost:8080/gui/touchpoints");
+					//"http://localhost:8080/api/" + (async ? "async/touchpoints" : "touchpoints"));
 
 			logger.info("readAllTouchpoints(): about to execute request: " + get);
 

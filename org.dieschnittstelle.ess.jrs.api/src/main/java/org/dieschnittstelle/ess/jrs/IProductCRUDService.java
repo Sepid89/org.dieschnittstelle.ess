@@ -28,19 +28,21 @@ import java.util.List;
 public interface IProductCRUDService {
 
 	@POST
-	public AbstractProduct createProduct(IndividualisedProductItem prod);
+	public AbstractProduct createProduct(AbstractProduct  prod);
+
 	@GET
-	public List<IndividualisedProductItem> readAllProducts();
+	public List<AbstractProduct> readAllProducts();
 
 	@PUT
-	@Path("/{productId}")
-	public AbstractProduct updateProduct(@PathParam("productId") long id,IndividualisedProductItem update);
-
+	@Path("/{id}")
+	public AbstractProduct  updateProduct(@PathParam("id") long id,
+										  AbstractProduct update);
 	@DELETE
-	@Path("/{productId}")
-	boolean deleteProduct(@PathParam("productId") long id );
+	@Path("/{id}")
+	boolean  deleteProduct(@PathParam("id") long id);
 
 	@GET
-	public AbstractProduct readProduct(long id);
+	@Path("/{id}")
+	public AbstractProduct  readProduct(@PathParam("id") long id);
 			
 }
