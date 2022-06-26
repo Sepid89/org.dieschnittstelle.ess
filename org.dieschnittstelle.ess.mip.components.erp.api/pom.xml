@@ -12,7 +12,7 @@
 
     <groupId>org.dieschnittstelle.ess</groupId>
     <artifactId>mip-components-erp-api</artifactId>
-    <version>${revision}</version>
+    <version>1.0-SNAPSHOT</version>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -22,10 +22,10 @@
         <plugins>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>${version.mvn.compiler.plugin}</version>
+                <version>3.8.0</version>
                 <configuration>
-                    <source>${version.mvn.compiler.java}</source>
-                    <target>${version.mvn.compiler.java}</target>
+                    <source>1.8</source>
+                    <target>1.8</target>
                 </configuration>
             </plugin>
         </plugins>
@@ -42,37 +42,49 @@
         <dependency>
             <groupId>jakarta.persistence</groupId>
             <artifactId>jakarta.persistence-api</artifactId>
-            <version>${version.jpa}</version>
+            <version>2.2.3</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>jakarta.transaction</groupId>
-            <artifactId>jakarta.transaction-api</artifactId>
-            <version>${version.transactionapi}</version>
+            <groupId>javax.transaction</groupId>
+            <artifactId>javax.transaction-api</artifactId>
+            <version>1.3</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.ws.rs</groupId>
+            <artifactId>javax.ws.rs-api</artifactId>
+            <version>2.1.1</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.xml.ws</groupId>
+            <artifactId>jaxws-api</artifactId>
+            <version>2.0</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-api</artifactId>
-            <version>${version.log4j}</version>
+            <version>2.15.0</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-core</artifactId>
-            <version>${version.log4j}</version>
+            <version>2.15.0</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.dieschnittstelle.ess.shared</groupId>
             <artifactId>lib-entities-erp</artifactId>
-            <version>${revision}</version>
+            <version>1.0-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.dieschnittstelle.ess.shared</groupId>
             <artifactId>lib-utils</artifactId>
-            <version>${revision}</version>
+            <version>1.0-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
