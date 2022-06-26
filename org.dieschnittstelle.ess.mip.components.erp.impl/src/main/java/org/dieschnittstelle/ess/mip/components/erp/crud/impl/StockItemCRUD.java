@@ -6,11 +6,17 @@ import org.dieschnittstelle.ess.entities.erp.IndividualisedProductItem;
 import org.dieschnittstelle.ess.entities.erp.PointOfSale;
 import org.dieschnittstelle.ess.entities.erp.StockItem;
 
+import javax.ws.rs.*;
+import javax.ws.rs.core.MediaType;
+
 /*
  * TODO MIP+JPA3/4/6:
  * this interface shall be implemented using a ApplicationScoped CDI bean with an EntityManager.
  * See the comments below for hints at how to implement the methods
  */
+@Path("/stockitems")
+@Consumes({MediaType.APPLICATION_JSON})
+@Produces({MediaType.APPLICATION_JSON})
 public interface StockItemCRUD {
 
     /*
@@ -29,16 +35,19 @@ public interface StockItemCRUD {
      * cascading for merge (only for merge!) and call merge() on item, which results
      * in persisting the item if it does not exist in the database yet
      */
+    @POST
     public StockItem createStockItem(StockItem item);
 
     /*
      * use a Query for reading out the stock item based on the given product and point of sale
      */
+    @GET
     public StockItem readStockItem(IndividualisedProductItem prod, PointOfSale pos);
 
     /*
      * use the merge() method of the EntityManager
      */
+    @PUT
     public StockItem updateStockItem(StockItem item);
 
     /*
@@ -47,11 +56,13 @@ public interface StockItemCRUD {
 	 * CustomerTransactionCRUDImpl (in .mip.components.crm.impl) as an
 	 * example
      */
+    @GET
     public List<StockItem> readStockItemsForProduct(IndividualisedProductItem prod);
 
     /*
      * here you can create a Query using the id of the pos object
      */
+    @GET
     public List<StockItem> readStockItemsForPointOfSale(PointOfSale pos);
 
 }
