@@ -105,7 +105,7 @@
       <module name="mip-components-crm-api" target="11" />
       <module name="mip-components-crm-impl" target="11" />
       <module name="mip-components-erp (1)" target="1.8" />
-      <module name="mip-components-erp-api" target="11" />
+      <module name="mip-components-erp-api" target="1.8" />
       <module name="mip-components-erp-impl" target="11" />
       <module name="mip-components-shopping-api" target="11" />
       <module name="mip-components-shopping-impl" target="11" />
