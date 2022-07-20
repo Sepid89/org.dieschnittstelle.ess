@@ -13,7 +13,7 @@ public class Milch {
 	private int menge;
 
 	@Brandname
-	@DisplayAs(value = "Brand of Milk")
+	@DisplayAS(value = "Brand of Milk")
 	private String markenname;
 
 	public int getMenge() {

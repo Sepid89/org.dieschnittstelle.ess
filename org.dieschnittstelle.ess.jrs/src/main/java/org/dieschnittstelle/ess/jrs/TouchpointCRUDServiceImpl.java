@@ -54,11 +54,6 @@ public class TouchpointCRUDServiceImpl implements ITouchpointCRUDService {
     }
 
     @Override
-    public StationaryTouchpoint updateTouchpoint(long id, StationaryTouchpoint touchpoint) {
-        return null;
-    }
-
-    @Override
     public StationaryTouchpoint readTouchpoint(long id) {
         StationaryTouchpoint tp = (StationaryTouchpoint) this.touchpointCRUD.readObject(id);
         if (tp != null) {
@@ -71,5 +66,16 @@ public class TouchpointCRUDServiceImpl implements ITouchpointCRUDService {
     /*
      * UE JRS1: implement the method for updating touchpoints
      */
+
+    @Override
+    public StationaryTouchpoint updateTouchpoint(long id, StationaryTouchpoint touchpoint) {
+        StationaryTouchpoint tp = (StationaryTouchpoint) this.touchpointCRUD.readObject(id);
+        if (tp != null) {
+            touchpoint.setId(id);
+            return (StationaryTouchpoint) this.touchpointCRUD.updateObject(touchpoint);
+        } else {
+            throw new NotFoundException("Could not update. The touchpoint with id " + id + " does not exist!");
+        }
+    }
 
 }

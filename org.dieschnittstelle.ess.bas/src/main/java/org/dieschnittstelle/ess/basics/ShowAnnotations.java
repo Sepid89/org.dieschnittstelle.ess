@@ -2,8 +2,8 @@ package org.dieschnittstelle.ess.basics;
 
 
 import org.dieschnittstelle.ess.basics.annotations.AnnotatedStockItemBuilder;
+import org.dieschnittstelle.ess.basics.annotations.DisplayAS;
 import org.dieschnittstelle.ess.basics.annotations.StockItemProxyImpl;
-import org.dieschnittstelle.ess.basics.annotations.stockitemtypes.DisplayAs;
 
 import java.lang.reflect.Field;
 
@@ -73,8 +73,8 @@ public class ShowAnnotations {
         for (Field field : instance.getClass().getDeclaredFields()) {
             j++;
             field.setAccessible(true);
-            if(field.getAnnotation(DisplayAs.class)!=null){
-                attributeStringBas.append(field.getAnnotation(DisplayAs.class).value());
+            if(field.getAnnotation(DisplayAS.class)!=null){
+                attributeStringBas.append(field.getAnnotation(DisplayAS.class).value());
             }else{
                 attributeStringBas.append(field.getName());
             }
@@ -87,6 +87,23 @@ public class ShowAnnotations {
         }
         attributeStringBas.append("}");
         System.out.println(attributeStringBas);
+
+
+        StringBuilder attributeString = new StringBuilder();
+        Class klass = instance.getClass();
+        attributeString.append(klass.getSimpleName()).append(" ");
+        for (Field field : instance.getClass().getDeclaredFields()) {
+            field.setAccessible(true);
+            if (field.getAnnotation(DisplayAS.class)!=null) {
+                attributeString.append(field.getAnnotation(DisplayAS.class).value());
+            } else {
+                attributeString.append(field.getName());
+            }
+            attributeString.append(":  ");
+            attributeString.append(field.get(instance));
+            attributeString.append("  ");
+        }
+        System.out.println(attributeString);
     }
 
 }

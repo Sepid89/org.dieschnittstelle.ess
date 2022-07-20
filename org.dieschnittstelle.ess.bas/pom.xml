@@ -20,11 +20,12 @@
     <build>
         <plugins>
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>${version.mvn.compiler.plugin}</version>
+                <version>3.10.1</version>
                 <configuration>
-                    <source>${version.mvn.compiler.java}</source>
-                    <target>${version.mvn.compiler.java}</target>
+                    <source>1.8</source>
+                    <target>1.8</target>
                 </configuration>
             </plugin>
         </plugins>
@@ -49,5 +50,4 @@
         </dependency>
 
     </dependencies>
-
 </project>

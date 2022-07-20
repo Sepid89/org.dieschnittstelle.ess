@@ -57,7 +57,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
-      <module name="bas" target="11" />
+      <module name="bas" target="1.8" />
       <module name="build-all-modules" target="11" />
       <module name="build-jrs" target="11" />
       <module name="build-jsf" target="1.8" />
