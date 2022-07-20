@@ -97,6 +97,7 @@ public class AccessRESTServiceWithInterpreter {
 		tp.setName("BHT Mensa");
 
 
+
 		tp = serviceProxy.updateTouchpoint(tp.getId(), tp);
 		show("updated: " + tp);
 
