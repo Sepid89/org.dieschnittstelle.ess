@@ -82,7 +82,7 @@ public class ShowTouchpointService {
 			if (stepwise)
 				step();
 
-			//deleteTouchpoint(touchpoints.get(0));
+			deleteTouchpoint(touchpoints.get(0));
 		}
 
 		// 3) wait for input and create a new touchpoint
@@ -179,8 +179,8 @@ public class ShowTouchpointService {
 
 		createClient();
 
-		logger.debug("client running: {}",client.isRunning());
-		HttpDelete delete = new HttpDelete("http://localhost:8888/org.dieschnittstelle.ess.ser/api/touchpoints/delete/" + tp.getId());
+		logger.debug("client running: {}",client.isRunning()); //org.dieschnittstelle.ess.ser/
+		HttpDelete delete = new HttpDelete("http://localhost:8080/api/touchpoints/delete/" + tp.getId());
 		try {
 			Future<HttpResponse> responseFuture = client.execute(delete, null);
 			HttpResponse response = null;
@@ -220,7 +220,7 @@ public class ShowTouchpointService {
 		try {
 
 			// create post request for the api/touchpoints uri
-			HttpPost request = new HttpPost("http://localhost:8888/org.dieschnittstelle.ess.ser/api/touchpoints");
+			HttpPost request = new HttpPost("http://localhost:8080/api/touchpoints");
 
 
 			// create an ObjectOutputStream from a ByteArrayOutputStream - the

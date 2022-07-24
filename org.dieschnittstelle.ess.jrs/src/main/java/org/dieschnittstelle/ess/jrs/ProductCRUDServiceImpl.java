@@ -19,7 +19,7 @@ import java.util.List;
 public class ProductCRUDServiceImpl implements IProductCRUDService {
 
 	protected static Logger logger = org.apache.logging.log4j.LogManager.getLogger(ProductCRUDServiceImpl.class);
-	@Context()
+	//@Context()
 	private ServletContext servletContext;
 
 	private GenericCRUDExecutor<AbstractProduct> readExecFromServletContext() {

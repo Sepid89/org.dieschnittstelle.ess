@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.logging.log4j.Logger;
 import org.dieschnittstelle.ess.entities.erp.AbstractProduct;
+import org.dieschnittstelle.ess.entities.erp.Campaign;
 import org.dieschnittstelle.ess.entities.erp.IndividualisedProductItem;
 
 import org.dieschnittstelle.ess.jrs.IProductCRUDService;
@@ -27,11 +28,11 @@ public class ProductCRUDRESTClient {
 		serviceProxy = null;
 
 		ResteasyClient rcb = (ResteasyClient) ClientBuilder.newBuilder().build();
-		ResteasyWebTarget target = rcb.target("http://localhost:8888/org.dieschnittstelle.ess.jrs/api");
+		ResteasyWebTarget target = rcb.target("http://localhost:8080/api");
 		serviceProxy = target.proxy(IProductCRUDService.class);
 	}
 
-	public AbstractProduct createProduct(IndividualisedProductItem prod) {
+	public AbstractProduct createProduct(AbstractProduct prod) {
 		AbstractProduct created = serviceProxy.createProduct(prod);
 		// as a side-effect we set the id of the created product on the argument before returning
 		prod.setId(created.getId());
@@ -39,8 +40,8 @@ public class ProductCRUDRESTClient {
 	}
 
 	// TODO: activate this method for testing JRS3
-	public AbstractProduct createCampaign(AbstractProduct prod) {
-		AbstractProduct created = serviceProxy.createProduct((IndividualisedProductItem) prod);
+	public AbstractProduct createCampaign(Campaign prod) {
+		AbstractProduct created = serviceProxy.createProduct((Campaign) prod);
 		// as a side-effect we set the id of the created product on the argument before returning
 		prod.setId(created.getId());
 		return created;
@@ -59,7 +60,8 @@ public class ProductCRUDRESTClient {
 	}
 
 	public AbstractProduct readProduct(long id) {
-		return serviceProxy.readProduct(id);
+		AbstractProduct abPr = serviceProxy.readProduct(id);
+		return abPr;
 	}
 
 }

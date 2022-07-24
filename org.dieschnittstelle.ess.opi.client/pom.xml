@@ -130,6 +130,11 @@
             <artifactId>log4j-core</artifactId>
             <version>${version.log4j}</version>
         </dependency>
+        <dependency>
+            <groupId>org.dieschnittstelle.ess</groupId>
+            <artifactId>opi-client</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
 
