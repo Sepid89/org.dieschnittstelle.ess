@@ -80,30 +80,30 @@ public class ShowAnnotations {
             }
             attributeStringBas.append(":  ");
 
-            attributeStringBas.append(field.get(instance));
+            attributeStringBas.append(field.get(instance)); //value of field
             if(j!=instance.getClass().getDeclaredFields().length)
                 attributeStringBas.append(",  ");
 
         }
         attributeStringBas.append("}");
         System.out.println(attributeStringBas);
-
-
-        StringBuilder attributeString = new StringBuilder();
-        Class klass = instance.getClass();
-        attributeString.append(klass.getSimpleName()).append(" ");
-        for (Field field : instance.getClass().getDeclaredFields()) {
-            field.setAccessible(true);
-            if (field.getAnnotation(DisplayAS.class)!=null) {
-                attributeString.append(field.getAnnotation(DisplayAS.class).value());
-            } else {
-                attributeString.append(field.getName());
-            }
-            attributeString.append(":  ");
-            attributeString.append(field.get(instance));
-            attributeString.append("  ");
-        }
-        System.out.println(attributeString);
+//
+//
+//        StringBuilder attributeString = new StringBuilder();
+//        Class klass = instance.getClass();
+//        attributeString.append(klass.getSimpleName()).append(" ");
+//        for (Field field : instance.getClass().getDeclaredFields()) {
+//            field.setAccessible(true);
+//            if (field.getAnnotation(DisplayAS.class)!=null) {
+//                attributeString.append(field.getAnnotation(DisplayAS.class).value());
+//            } else {
+//                attributeString.append(field.getName());
+//            }
+//            attributeString.append(":  ");
+//            attributeString.append(field.get(instance));
+//            attributeString.append("  ");
+//        }
+//        System.out.println(attributeString);
     }
 
 }

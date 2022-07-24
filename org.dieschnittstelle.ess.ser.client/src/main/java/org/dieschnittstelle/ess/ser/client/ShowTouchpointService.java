@@ -123,13 +123,10 @@ public class ShowTouchpointService {
 		// demonstrate access to the asynchronously running servlet (client-side access is asynchronous in any case)
 		boolean async = false;
 
-		try {
+		try {			// create a GetMethod
 
-			// create a GetMethod
-
-			// UE SER1: Aendern Sie die URL von api->gui
-			HttpGet get = new HttpGet(
-					"http://localhost:8080/api/" + (async ? "async/touchpoints" : "touchpoints"));
+			// UE SER1: Aendern Sie die URL von api->gui  + (async ? "async/touchpoints" : "touchpoints")
+			HttpGet get = new HttpGet("http://localhost:8080/api/touchpoints");
 
 			logger.info("readAllTouchpoints(): about to execute request: " + get);
 

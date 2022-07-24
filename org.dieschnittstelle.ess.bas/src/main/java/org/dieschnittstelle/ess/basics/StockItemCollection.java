@@ -56,6 +56,8 @@ public class StockItemCollection {
             for (int i=0; i< stockitemElements.getLength();i++) {
             	// let the builder create the stockitem and add it to the list
             	stockitems.add(builder.buildStockItemFromElement((Element)stockitemElements.item(i)));
+				System.out.println("**************************************************");
+				System.out.println(stockitemElements.item(i).getNodeName());
             }
             
             logger.debug("read in stockitems: " + this.stockitems);
