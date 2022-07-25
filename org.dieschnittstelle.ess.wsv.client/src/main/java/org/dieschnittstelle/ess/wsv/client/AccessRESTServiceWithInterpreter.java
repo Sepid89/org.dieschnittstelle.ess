@@ -7,6 +7,7 @@ import java.lang.reflect.Proxy;
 import java.util.List;
 
 import org.apache.logging.log4j.Logger;
+import org.dieschnittstelle.ess.entities.crm.AbstractTouchpoint;
 import org.dieschnittstelle.ess.entities.crm.Address;
 import org.dieschnittstelle.ess.entities.crm.StationaryTouchpoint;
 import org.dieschnittstelle.ess.utils.Utils;
@@ -54,7 +55,7 @@ public class AccessRESTServiceWithInterpreter {
         step();
 
         // 1) read out all touchpoints
-        List<StationaryTouchpoint> tps = serviceProxy.readAllTouchpoints();
+        List<AbstractTouchpoint> tps = serviceProxy.readAllTouchpoints();
         show("read all: " + tps);
 
 
@@ -98,7 +99,7 @@ public class AccessRESTServiceWithInterpreter {
 
 
 
-		tp = serviceProxy.updateTouchpoint(tp.getId(), tp);
+		tp = (StationaryTouchpoint) serviceProxy.updateTouchpoint(tp.getId(), tp);
 		show("updated: " + tp);
 
     }
