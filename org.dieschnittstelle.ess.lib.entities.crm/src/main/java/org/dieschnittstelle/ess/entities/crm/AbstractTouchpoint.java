@@ -18,6 +18,7 @@ import javax.persistence.InheritanceType;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
+import javax.xml.bind.annotation.XmlTransient;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -84,10 +85,12 @@ public abstract class AbstractTouchpoint implements Serializable, GenericCRUDEnt
 	/*
 	 * TODO JWS2: kommentieren Sie @XmlTransient aus
 	 */
+	@XmlTransient
 	@ManyToMany
 	@JsonbTransient
 	private Collection<Customer> customers = new HashSet<Customer>();
-	
+
+	@XmlTransient
 	@OneToMany(mappedBy="touchpoint")
 	@JsonbTransient
 	private Collection<CustomerTransaction> transactions;

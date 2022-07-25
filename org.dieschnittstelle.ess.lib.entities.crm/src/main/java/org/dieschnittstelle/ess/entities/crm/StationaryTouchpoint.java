@@ -18,10 +18,15 @@ import javax.persistence.PostUpdate;
 import javax.persistence.PrePersist;
 import javax.persistence.PreRemove;
 import javax.persistence.PreUpdate;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * @author kreutel
  */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(namespace = "http://dieschnittstelle.org/ess/entities/crm/ws")
 @Entity
 @DiscriminatorValue("stationary")
 @JsonbTypeSerializer(JsonbJsonTypeInfoHandler.class)

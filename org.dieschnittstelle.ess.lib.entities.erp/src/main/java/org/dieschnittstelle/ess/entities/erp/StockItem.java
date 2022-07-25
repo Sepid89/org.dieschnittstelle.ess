@@ -4,8 +4,8 @@ import javax.persistence.*;
 
 import org.apache.logging.log4j.Logger;
 
-//@Entity
-@Table(name = "stock")
+@Entity
+//@Table(name = "stock")
 // leave this commented out: The usage of IdClass is not working with OpenJPA, so we choose an alternative solution with an own id column
 //@IdClass(ProductAtPosPK.class)
 public class StockItem {
@@ -42,6 +42,7 @@ public class StockItem {
 		this.pos = pos;
 		this.units = units;
 	}
+	public long getId() { return id; }
 
 	public PointOfSale getPos() {
 		return pos;
