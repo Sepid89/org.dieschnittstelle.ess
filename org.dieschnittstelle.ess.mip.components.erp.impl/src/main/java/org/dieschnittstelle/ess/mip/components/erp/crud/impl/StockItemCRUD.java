@@ -56,6 +56,10 @@ public interface StockItemCRUD {
 	 * CustomerTransactionCRUDImpl (in .mip.components.crm.impl) as an
 	 * example
      */
+
+    @GET
+    public List<StockItem> readAllStockItems();
+
     @GET
     public List<StockItem> readStockItemsForProduct(IndividualisedProductItem prod);
 
