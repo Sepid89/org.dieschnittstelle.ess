@@ -31,7 +31,7 @@
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.logging.log4j:log4j-core:2.17.1" level="project" />
     <orderEntry type="module" module-name="mip-components-erp-api" scope="PROVIDED" />
     <orderEntry type="module" module-name="lib-entities-erp" scope="PROVIDED" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: commons-lang:commons-lang:2.6" level="project" />
+    <orderEntry type="library" name="Maven: commons-lang:commons-lang:2.6" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.13.0" level="project" />
     <orderEntry type="module" module-name="lib-utils" scope="PROVIDED" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.httpcomponents:httpclient:4.5.13" level="project" />
@@ -40,5 +40,8 @@
     <orderEntry type="library" scope="PROVIDED" name="Maven: commons-codec:commons-codec:1.11" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.httpcomponents:httpasyncclient:4.1.5" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.httpcomponents:httpcore-nio:4.4.15" level="project" />
+    <orderEntry type="module" module-name="lib-entities-crm" />
+    <orderEntry type="library" name="Maven: jakarta.xml.bind:jakarta.xml.bind-api:2.3.2" level="project" />
+    <orderEntry type="library" name="Maven: jakarta.activation:jakarta.activation-api:1.2.1" level="project" />
   </component>
 </module>

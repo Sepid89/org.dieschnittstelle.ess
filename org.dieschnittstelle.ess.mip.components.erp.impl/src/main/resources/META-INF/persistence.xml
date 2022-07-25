@@ -13,6 +13,20 @@
 <!--		<jar-file></jar-file>-->
 		<!-- as we are using different PUs within a single deployment, we list the classes for each PU -->
 		<!-- TODO: new entity classes need to be added here! -->
+		<class>org.dieschnittstelle.ess.entities.crm.AbstractTouchpoint</class>
+		<class>org.dieschnittstelle.ess.entities.crm.Address</class>
+		<class>org.dieschnittstelle.ess.entities.crm.Customer</class>
+		<class>org.dieschnittstelle.ess.entities.crm.CustomerTransaction</class>
+		<class>org.dieschnittstelle.ess.entities.crm.CustomerTransactionShoppingCartItem</class>
+		<class>org.dieschnittstelle.ess.entities.crm.Location</class>
+		<class>org.dieschnittstelle.ess.entities.crm.MobileTouchpoint</class>
+		<class>org.dieschnittstelle.ess.entities.crm.StationaryTouchpoint</class>
+		<class>org.dieschnittstelle.ess.entities.erp.PointOfSale</class>
+		<class>org.dieschnittstelle.ess.entities.erp.IndividualisedProductItem</class>
+		<class>org.dieschnittstelle.ess.entities.erp.AbstractProduct</class>
+		<class>org.dieschnittstelle.ess.entities.erp.StockItem</class>
+		<class>org.dieschnittstelle.ess.entities.erp.Campaign</class>
+		<class>org.dieschnittstelle.ess.entities.shopping.ShoppingCartItem</class>
 		<class>org.dieschnittstelle.ess.entities.erp.PointOfSale</class>
 		<properties>
 			<!-- hibernate/wildfly automatic schema generation -->
