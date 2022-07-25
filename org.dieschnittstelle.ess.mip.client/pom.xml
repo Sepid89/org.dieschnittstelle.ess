@@ -86,6 +86,12 @@
             <artifactId>lib-utils</artifactId>
             <version>${revision}</version>
         </dependency>
+        <dependency>
+            <groupId>jakarta.platform</groupId>
+            <artifactId>jakarta.jakartaee-web-api</artifactId>
+            <version>8.0.0</version>
+            <scope>compile</scope>
+        </dependency>
 
     </dependencies>
 

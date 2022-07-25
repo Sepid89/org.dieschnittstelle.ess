@@ -23,9 +23,15 @@ import org.dieschnittstelle.ess.mip.client.apiclients.CustomerTrackingClient;
 import org.dieschnittstelle.ess.mip.client.apiclients.ShoppingCartClient;
 import org.dieschnittstelle.ess.entities.erp.AbstractProduct;
 import org.dieschnittstelle.ess.entities.erp.Campaign;
+import org.dieschnittstelle.ess.utils.interceptors.Logged;
 
+import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
+import javax.transaction.Transactional;
 
+@RequestScoped
+@Transactional
+@Logged
 public class ShoppingSession implements ShoppingBusinessDelegate {
 
     protected static Logger logger = org.apache.logging.log4j.LogManager.getLogger(ShoppingSession.class);

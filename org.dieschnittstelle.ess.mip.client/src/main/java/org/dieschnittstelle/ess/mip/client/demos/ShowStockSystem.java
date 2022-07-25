@@ -43,8 +43,8 @@ public class ShowStockSystem {
 		try {
 			createProducts();
 			createTouchpoints();
-			createStock();
-			showStock();
+			//createStock();
+			//showStock();
 		} catch (Exception e) {
 			logger.error("got exception: " + e, e);
 		}
